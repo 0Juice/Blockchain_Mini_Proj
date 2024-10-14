@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Supply Chain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Food Supply Chain Tracking</h1>
+
+    <!-- Produce Food Item -->
+    <div>
+        <h2>Produce Food Item</h2>
+        <input type="text" id="itemId" placeholder="Item ID">
+        <input type="text" id="itemName" placeholder="Item Name">
+        <input type="text" id="location" placeholder="Location">
+        <input type="number" id="expiryDate" placeholder="Expiry Date (optional)">
+        <button onclick="produceItem()">Produce Item</button>
+    </div>
+
+    <!-- Update Location -->
+    <div>
+        <h2>Update Item Location</h2>
+        <input type="text" id="updateItemId" placeholder="Item ID">
+        <input type="text" id="newLocation" placeholder="New Location">
+        <select id="newStage">
+            <option value="0">Produced</option>
+            <option value="1">InTransit</option>
+            <option value="2">AtWarehouse</option>
+            <option value="3">Delivered</option>
+        </select>
+        <button onclick="updateItemLocation()">Update Location</button>
+    </div>
+
+    <!-- Transfer Ownership -->
+    <div>
+        <h2>Transfer Ownership</h2>
+        <input type="text" id="transferItemId" placeholder="Item ID">
+        <input type="text" id="newHandler" placeholder="New Handler Address">
+        <button onclick="transferOwnership()">Transfer Ownership</button>
+    </div>
+
+    <!-- View Item Details -->
+    <div>
+        <h2>View Item Details</h2>
+        <input type="text" id="viewItemId" placeholder="Item ID">
+        <button onclick="viewItemDetails()">View Details</button>
+        <div id="itemDetails"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script type="module" src="config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
